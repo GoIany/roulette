@@ -254,7 +254,7 @@
 			bottom: calc(160px + 1.5rem);
 			left: 1rem;
 			z-index: 999;
-			visibility: visible;
+			visibility: hidden;
 			opacity: 1;
 			transition: visibility 0s, opacity 1s linear;
 			&.hide {
@@ -502,13 +502,8 @@
 
 		const checkDonateButtonLoaded = () => {
 			const btn = document.querySelector('span.bmc-btn-text');
-			if (!btn) {
-				setTimeout(checkDonateButtonLoaded, 100);
-			} else {
-				console.log('donation button has been loaded');
-				btn.setAttribute('data-trans', '');
+			btn.setAttribute('data-trans', '');
 				window.translateElement(btn);
-			}
 		};
 		setTimeout(checkDonateButtonLoaded, 100);
 	}
